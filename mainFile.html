@@ -1,3 +1,83 @@
 <script>
+function computerPlay(){
+    let RockPaperScissors=["ROCK","PAPER","SCISSORS"];
+    return RockPaperScissors[Math.floor(Math.random()*3)];
+}
 
+function playRound(playerSelection,computerSelection){
+    if(playerSelection=="ROCK"){
+                if(computerSelection=="PAPER"){
+                    return -1;
+                }
+                else if(computerSelection=="SCISSORS"){
+                    return 1;
+                }
+                else{
+
+                    return 0; //it’s a tie both throwm ROCK
+                }
+
+    }
+    else if(playerSelection=="PAPER"){
+                if(computerSelection=="ROCK"){
+                    return 1;
+                }
+                else if(computerSelection=="SCISSORS"){
+                    return -1;
+                }
+                else{
+                    return 0; //it’s a tie both throwm PAPER
+                }
+
+    }
+    else { // SCISORE
+                if(computerSelection=="PAPER"){
+                    return 1;
+                }
+                else if(computerSelection=="ROCK"){
+                    return -1;
+                }
+                else{
+                    return 0; //it’s a tie both throwm SCISSORS
+                }
+
+    }
+    
+    // paper > rock
+    // rock > SCISSOR
+    // SCISSOR > paper
+
+}
+function game(){
+    let userScore=0,computerScore=0;
+for(let i=0;i<5;i++){
+    playerSelection=prompt("Your Choice").toUpperCase();
+    computerSelection=computerPlay();
+    if(!(playerSelection=="ROCK"||playerSelection=="PAPER"||playerSelection=="SCISSORS")){
+        console.log("sorry invalid intery");
+        i--;
+        continue;
+    }
+    let result=playRound(playerSelection,computerSelection);
+   if(result==1){  
+       console.log("you won ! "+playerSelection+" beats "+computerSelection);
+       userScore++;  
+       }
+   else if(result== -1){  
+       console.log("you lose ! "+computerSelection+" beats "+playerSelection);
+       computerScore++;
+       }
+   else { 
+       console.log("it’s a tie both chose "+playerSelection);
+       }
+   console.log("your score is : "+userScore);
+   console.log("computer score is : "+computerScore);
+}
+console.log("Game Over ");
+console.log("your score is : "+userScore);
+console.log("computer score is : "+computerScore);
+userScore > computerScore ? console.log("You have won in total. congrates: ") 
+: userScore < computerScore ? console.log("You have lost in total. try again: ")
+: console.log("you have match... you should replay");
+}
 </script>
