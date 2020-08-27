@@ -3,14 +3,14 @@
 <html>
     <head>
         <title>
-            rock-papre-scissors
+            rock-paper-scissors
         </title>
     </head>
     <body>
         <h2 style="text-align: center;"> please run the "game()" function from console<h2>
             <h3 style="text-align: center;"> by Tadesse Alemayehu <h3>
             <p style="text-align: center;">------------------------------------ happy gaming ------------------------------------</p>
-        
+         
     </body>
 </html>
 <script>
@@ -27,10 +27,7 @@ function playRound(playerSelection,computerSelection){
                 else if(computerSelection=="SCISSORS"){
                     return 1;
                 }
-                else{
-
-                    return 0; //it’s a tie both throwm ROCK
-                }
+                    
 
     }
     else if(playerSelection=="PAPER"){
@@ -40,26 +37,24 @@ function playRound(playerSelection,computerSelection){
                 else if(computerSelection=="SCISSORS"){
                     return -1;
                 }
-                else{
-                    return 0; //it’s a tie both throwm PAPER
-                }
-
     }
-    else { // SCISORE
+    else if(playerSelection=="SCISORE"){
                 if(computerSelection=="PAPER"){
                     return 1;
                 }
                 else if(computerSelection=="ROCK"){
                     return -1;
-                }
-                else{
-                    return 0; //it’s a tie both throwm SCISSORS
-                }
+                }    
 
     }
-    
+     return 0;
+    /*it’s a tie both throw SCISSORS
+	 function only returns 0 if the player chose ROCK or PAPER or SCISORE 
+	 and cant find unlike choice of the computer to compare  it with, 
+     in which case they are equal
+	 */
     // paper > rock
-    // rock > SCISSOR
+    // rock > SCISSORS
     // SCISSOR > paper
 
 }
