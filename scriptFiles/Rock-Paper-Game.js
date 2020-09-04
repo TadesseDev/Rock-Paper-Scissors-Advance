@@ -31,13 +31,14 @@ playA.addEventListener("click",()=>{
    humanScoreText.textContent=userScore;
    computerScoreText.textContent=computerScore;
 })
-/* game */
 
+/* a function to pick a random computer option */
 function computerPlay(){
     let RockPaperScissors=["ROCK","PAPER","SCISSORS"];
     return RockPaperScissors[Math.floor(Math.random()*3)];
 }
 
+/* a function to play a single round and return a winning number */
 function playRound(playerSelection,computerSelection){
     if(playerSelection=="ROCK"){
                 if(computerSelection=="PAPER"){
@@ -46,8 +47,6 @@ function playRound(playerSelection,computerSelection){
                 else if(computerSelection=="SCISSORS"){
                     return 1;
                 }
-                    
-
     }
     else if(playerSelection=="PAPER"){
                 if(computerSelection=="ROCK"){
@@ -69,7 +68,7 @@ function playRound(playerSelection,computerSelection){
      return 0;
     /*it’s a tie both throw SCISSORS
 	 function only returns 0 if the player chose ROCK or PAPER or SCISORE 
-	 and cant find unlike choice of the computer to compare  it with, 
+	 and can't find unlike choice of the computer to compare it with, 
      in which case they are equal
 	 */
     // paper > rock
@@ -77,15 +76,11 @@ function playRound(playerSelection,computerSelection){
     // SCISSOR > paper
 
 }
+
+/* a game function called by a user and manipulate the document */
 function game(humanChoice){
     roundCount++;
-// for(let i=0;i<5;i++){
     computerSelection=computerPlay();
-    // if(!(humanChoice=="ROCK"||humanChoice=="PAPER"||humanChoice=="SCISSORS")){
-    //     console.log("sorry invalid intery");
-    //     i--;
-    //     continue;
-    // }
     let result=playRound(humanChoice,computerSelection);
    if(result==1){  
     middleText.textContent="you won ! "+humanChoice+" beats "+computerSelection;
@@ -102,7 +97,7 @@ function game(humanChoice){
     round.textContent="Round :"+roundCount;
        if(roundCount==5){
  middleText.innerHTML="Game Over <br/> your score is : "+userScore +"<br/>computer score is : "+computerScore;
-    userScore > computerScore ? round.textContent="You have won in total. congrates: " :
+    userScore > computerScore ? round.textContent="You have won in total. congrats: " :
     userScore < computerScore ? round.textContent="You have lost in total. try again: " :
     round.textContent="you have match... you should replay";
     bottomParent.removeChild(rockButton);
@@ -114,6 +109,5 @@ function game(humanChoice){
    computerScoreText.textContent=computerScore;
    computerState.textContent=computerSelection;
    humanState.textContent=humanChoice;
-// }
 
 }
