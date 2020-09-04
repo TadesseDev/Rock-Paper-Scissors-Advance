@@ -1,0 +1,243 @@
+html{
+    margin: 0px;
+}
+body{
+    margin: 0px;
+    position: relative;
+}
+.topContainer{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    display: block;
+    height: 30%;
+    background-color: #296237;
+    text-align: center;
+}
+main{
+    padding-top: 4%;
+    color: #F6FFFF;
+    font-size: 2em;
+}
+.sub{
+    display: block;
+    margin-top: 3%;
+    color: white;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+.centerContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.bottomContainer{
+    position: absolute;
+    height: 30%;
+    background-color: #296237;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    text-align: center;
+}
+.leftBox, .rightBox{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    top: 20%;
+    background-color: white;
+    border-radius: 10px;
+    color: #1D6EB0;
+    font-size: 3em;
+    text-align: center;
+}
+.rightBox{
+    right:  0px;
+}
+.computerScore, .humanScore{
+    width: 150px;
+    height: 70px;
+    display: inline-block;
+    background-color: orange;
+    position: absolute;
+    border-radius: 10px;
+    top: 30%;
+    text-align: center;
+    font-size: 4em;
+    color: #296237;
+}
+.humanScore{
+    right: 200px;
+}
+.computerScore{
+    left: 200px;
+}
+.middleText{
+    position: relative;
+    top: 50%;
+    text-align: center;
+    margin: auto;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #FF1A26;
+    text-transform: capitalize;
+}
+.selection{
+    font-size: 0.6em;
+    text-transform: capitalize;
+    color: #FF1A26;
+    margin: 0px 5px;
+}
+.imgContainerRock, .imgContainerPaper, .imgContainerScissors{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    margin: -75px 10px 10px 10px;
+    background-image: url(../ImageFiles/ROCK.png);
+    background-size: contain;
+    background-position: center;
+
+}
+.imgContainerPaper{
+    transform: rotate(-140deg);
+    background-image: url(../ImageFiles/PAPER.png);
+}
+.imgContainerScissors{
+    transform: rotate(-20deg);
+    background-image: url(../ImageFiles/SCISSORS.png);
+}
+/* .imageHover{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+}
+.imageHover:hover{
+    opacity: 0.2;
+} */
+@media (max-width: 800px){
+    .middleText{
+        font-size: 1.5em;
+    }
+    .leftBox, .rightBox{
+        width: 150px;
+        height: 150px;
+        font-size: 2em;
+    }
+    .imgContainerRock, .imgContainerPaper, .imgContainerScissors{
+        width: 100px;
+        height: 100px;
+        margin: -50px 10px 10px 10px;
+    
+    }
+    .computerScore, .humanScore{
+        width: 100px;
+        height: 40px;
+        font-size: 2.5em;
+    }
+    .computerScore{
+        left: 150px;
+    } 
+    .humanScore{
+        right: 150px;
+    }
+}
+.playNextButton{
+    height: 50px;
+    width: 300px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: -25px;
+    font-size: 1.5em;
+    padding-top: 20px;
+    background: linear-gradient(0deg, white 0%, white 50%, #296237 50%, #296237 100% ); 
+    text-transform: capitalize;
+}
+.playNextButton:hover{
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.452); 
+}
+@media (max-width: 600px){
+    .computerScore{
+        left: 100px;
+    } 
+    .humanScore{
+        right: 100px;
+    }
+    .middleText{
+        font-size: 1.5em;
+    }
+    .leftBox, .rightBox{
+        font-size: 1.5em;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-width: 500px){
+    .computerScore{
+        left: 100px;
+    } 
+    .humanScore{
+        right: 100px;
+    }
+    .middleText{
+        font-size: 1em;
+    }
+    .leftBox, .rightBox{
+        font-size: 1.5em;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-height: 400px){
+    .computerScore{
+        left: 100px;
+    } 
+    .humanScore{
+        right: 100px;
+    }
+    .middleText{
+        top: 47%;
+        font-size: 1em;
+    }
+    .leftBox, .rightBox{
+        font-size: 1.5em;
+        width: 100px;
+        height: 100px;
+    }
+    .imgContainerRock, .imgContainerPaper, .imgContainerScissors{
+        width: 100px;
+        height: 100px;
+        margin: -50px 10px 10px 10px;
+    
+    }
+    main{
+        padding-top: 1%;
+        color: #F6FFFF;
+        font-size: 1em;
+    }
+    .sub{
+    margin: 0%;
+    font-size: 1em;
+    }
+    .topContainer .sub{
+        margin-top: 3%;
+    }
+}
+@media (max-height: 300px){
+    .imgContainerRock, .imgContainerPaper, .imgContainerScissors{
+        width: 50px;
+        height: 50px;
+        margin: -25px 10px 10px 10px;
+    
+    }
+}
